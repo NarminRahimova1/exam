@@ -1,8 +1,5 @@
 import React from 'react'
-import { nanoid } from 'nanoid';
-import { FaCarSide } from "react-icons/fa";
-import { FaGift } from "react-icons/fa";
-import { FaCrown } from "react-icons/fa";
+import { FaCarSide, FaGift, FaCrown } from "react-icons/fa";
 import { CiCreditCard1 } from "react-icons/ci";
 
 const featuresData = [
@@ -30,18 +27,18 @@ const featuresData = [
 
 function Features() {
   return (
- <div className="container flex  items-center justify-between mb-5">
-  {featuresData.map(({icon, title, info }) => (
-    <div key={nanoid()} className="flex items-center p-4 rounded">
-      <p className="text-[50px] mr-4 text-gray-600">{icon}</p>
-      <div className="flex flex-col">
-        <h3 className="text-xl font-bold">{title}</h3>
-        <p className="text-gray-600">{info}</p>
+ <div className="container flex justify-between items-center p-4">
+  {featuresData.map(({icon, title, info }, index ) => (
+    <div key={index} className="flex items-center my-6">
+      <span className="text-[50px] mr-4 text-[#121212BF]">{icon}</span>
+      <div className="flex flex-col gap-2"> 
+        <h3 className="text-[16px] font-bold uppercase text-[#121212]">{title}</h3>
+        <p className="text-[15px] text-[#121212BF]">{info}</p>
       </div>
-    </div>
+     </div>
   ))}
 </div>
-  )
+  );
 }
 
 export default Features;
